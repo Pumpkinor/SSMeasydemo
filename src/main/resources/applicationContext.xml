@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+                <!--spring-->
+    <!-- 使用context命名空间，扫描base-package下所有的java类，并把所有匹配的java类注册成bean 进行注解解析-->
+    <context:component-scan base-package="cn.pumpkinor"/>
+
+                <!--mybatis-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName">
+            <value>com.mysql.jdbc.Driver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:mysql://localhost:3306/how2java?characterEncoding=UTF-8</value>
+
+        </property>
+        <property name="username">
+            <value>root</value>
+        </property>
+        <property name="password">
+            <value>1229</value>
+        </property>
+    </bean>
+    <!--配置SqlSessionFactory对象-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 扫描sql的xml映射器配置文件 *mapper.xml文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!-- SpringMVC整合Mybatis的对象别名设置 设置实体类别名-->
+        <property name="typeAliasesPackage" value="cn.pumpkinor.entity"/>
+    </bean>
+    <!--配置SqlSession对象-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+    <!--使用MapperScannerConfigurer来查找类路径下的映射器 并自动将其创建成MapperFactoryBean 免去在applicationContext.xml文件中注册手动所有的映射器-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="cn.pumpkinor.dao"/>
+    </bean>
+
+</beans>

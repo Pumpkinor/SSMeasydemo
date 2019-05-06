@@ -1,0 +1,65 @@
+<web-app version="2.5"
+                  xmlns="http://java.sun.com/xml/ns/javaee"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+           http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!--Spring部分-->
+  <!-- 编码过滤器 -->
+  <filter>
+      <filter-name>encodingFilter</filter-name>
+      <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+      <init-param>
+          <param-name>encoding</param-name>
+          <param-value>UTF-8</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>encodingFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+                              <!--Spring部分-->
+  <!--整个项目的全局变量，用于指定Spring的配置文件applicationContext.xml的位置-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  <!-- ContextLoaderListener监听器，能够在启动web容器时，自动装配applicationContext的配置信息 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+                              <!--Spring-MVC部分-->
+  <!--spring-mvc核心：分发servlet即配置DispatcherSevelet-->
+  <servlet>
+    <!--设置dispatcherSeverlet，dispatcherSeverlet用于拦截匹配的请求，根据相应规则由spring-mvc分发到目标controller处理-->
+    <servlet-name>dispatcherSeverlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- 指定spring-mvc的配置文件位置，即初始化参数（当前servlet的局部变量） -->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring-MVC.xml</param-value>
+    </init-param>
+    <!--大于等于0时表示启动容器时初始化该servlet，正值越小，优先级越高 若小于0或未指定 则在该servlet被选择时才初始化它-->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <!-- 指定servlet的匹配规则 -->
+  <servlet-mapping>
+    <!-- servlet-mapping中的servlet-name要与servlet里的servlet-name相一致 -->
+    <servlet-name>dispatcherSeverlet</servlet-name>
+    <!-- /表示匹配拦截所有请求 -->
+    <url-pattern>/</url-pattern>
+    <!--
+    拓展名匹配
+    <url-pattern>/*.jsp</url-pattern>
+    路径匹配
+    <url-pattern>test/*</url-pattern>
+    精准匹配
+    <url-pattern>/index.jsp</url-pattern>
+    -->
+  </servlet-mapping>
+</web-app>

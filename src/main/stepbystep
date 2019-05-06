@@ -1,0 +1,19 @@
+maven
+
+1.在pom.xml里把要用的插件载入
+
+spring
+
+2.写web.xml里spring的配置文件applicationContext.xml的路径以及配置ContextLoaderListener监听器
+3.在applicationContext.xml里配置 component-scan 扫描base-package下所有的java类，并把所有匹配的java类注册成bean
+
+spring-mvc
+
+4.在web.xml里为spring-mvc指定servlet的name class 配置文件spring-MVC路径以及参数 还有servlet-mapping
+5.在spring-MVC里配置 component-scan扫描base-package下的所有controller类(后端控制器),把匹配的controller注册成bean
+6.在spring-MVC里配置 配置JSP　显示ViewResolver(视图解析器)
+
+mybatis
+
+7.建立jdbc.properties （jdbc配置文件）驱动名、url、username、password
+8.
