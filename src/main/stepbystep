@@ -17,3 +17,6 @@ mybatis
 
 7.建立jdbc.properties （jdbc配置文件）驱动名、url、username、password
 8.
+
+
+test
