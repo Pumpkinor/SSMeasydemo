@@ -1,5 +1,8 @@
 package cn.pumpkinor.entity;
 
+/**
+ * @author Pumpkinor
+ */
 public class Student {
     private Integer id;
     private String name;

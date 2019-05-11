@@ -8,16 +8,21 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Pumpkinor
+ */
 @Service
 public class StudentsServicesImpl implements StudentsServices {
 
     @Autowired
     private StudentsMapper studentsMapper;
 
+    @Override
     public List<Student> list(){
         return studentsMapper.list();
     }
 
+    @Override
     public void addStudent(Student student){
         studentsMapper.addStudent(student);
     }
