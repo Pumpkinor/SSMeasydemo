@@ -4,6 +4,9 @@ import cn.pumpkinor.entity.Student;
 
 import java.util.List;
 
+/**
+ * @author Pumpkinor
+ */
 public interface StudentsServices {
     List<Student> list();
     void addStudent(Student student);
