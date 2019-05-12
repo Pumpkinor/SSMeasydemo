@@ -17,9 +17,21 @@ import java.util.List;
 @Controller
 @RequestMapping("")
 public class StudentsController {
+//    Java变量的初始化顺序为：静态变量或静态语句块–>实例变量或初始化语句块–>构造方法–>@Autowired
+    //依赖注入有三种方式：
+    //
+    //变量（filed）注入
+    //构造器注入
+    //set方法注入
+    //所以此处使用变量注入会有警告 推荐使用构造器注入
 
+    private StudentsServices studentsServices;
     @Autowired
-    StudentsServices studentsServices;
+    public StudentsController(StudentsServices studentsServices){
+        this.studentsServices = studentsServices;
+    }
+
+
 
     @RequestMapping("listStudents")
     public ModelAndView listStudents(){

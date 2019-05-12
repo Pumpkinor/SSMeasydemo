@@ -13,9 +13,11 @@ import java.util.List;
  */
 @Service
 public class StudentsServicesImpl implements StudentsServices {
-
-    @Autowired
     private StudentsMapper studentsMapper;
+    @Autowired
+    public StudentsServicesImpl(StudentsMapper studentsMapper){
+        this.studentsMapper = studentsMapper;
+    }
 
     @Override
     public List<Student> list(){
