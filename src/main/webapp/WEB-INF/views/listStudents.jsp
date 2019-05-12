@@ -18,13 +18,15 @@
 	            <td>${m.name}</td>
 	            <td>${m.gender}</td>
 	            <td>${m.age}</td>
-				<td><a href="${pageContext.request.contextPath}/editStudent?id=${m.id}">修改</a></td>
-				<td><a href="${pageContext.request.contextPath}/deleteStudent?id=${m.id}">删除</a></td>
+				<td><a href="editStudent?id=${m.id}">修改</a></td>
+				<td><a href="deleteStudent?id=${m.id}">删除</a></td>
 	        </tr>
 	    </c:forEach>
 	</table>
 
-	 <form method="post" id="addForm" action="${pageContext.request.contextPath}/addStudent" role="form">
+<%--	 ${pageContext.request.contextPath}用于解决使用相对路径时出现的问题，它的作用是取出所部署项目的名字。--%>
+<%--	 用action="${pageContext.request.contextPath}/addStudent" 或者直接"addStudent"--%>
+	 <form method="post" id="addForm" action="addStudent" role="form">
 		 <table align='center' border='1' cellspacing='0'>
 			 <caption>添加新的学生信息</caption>
 			 <tr>
