@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" id="editForm" action="$updateStudent" role="form">
+<form method="post" id="editForm" action="updateStudent" role="form">
     <table align='center' border='1' cellspacing='0'>
         <tr>
             <td>姓名：</td>
