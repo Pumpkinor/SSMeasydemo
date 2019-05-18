@@ -6,7 +6,6 @@
  Source Server Version : 80015
  Source Host           : localhost:3306
  Source Schema         : ssmeasydemo
-
  Target Server Type    : MySQL
  Target Server Version : 80015
  File Encoding         : 65001
