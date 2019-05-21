@@ -7,9 +7,9 @@
                 <!--spring-->
     <!-- 使用context命名空间，扫描base-package下所有的java类，并把所有匹配的java类注册成bean 进行注解解析-->
     <context:component-scan base-package="cn.pumpkinor"/>
-
+    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
                 <!--mybatis-->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+   <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName">
             <value>com.mysql.jdbc.Driver</value>
         </property>
@@ -22,6 +22,14 @@
         <property name="password">
             <value>1229</value>
         </property>
+    </bean>-->
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
 
     <!--配置SqlSessionFactory对象-->

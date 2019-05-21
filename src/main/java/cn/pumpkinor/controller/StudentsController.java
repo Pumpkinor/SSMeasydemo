@@ -33,7 +33,7 @@ public class StudentsController {
 
 
 
-    @RequestMapping("listStudents")
+    @RequestMapping("/listStudents")
     public ModelAndView listStudents(){
         ModelAndView studentMAV =new ModelAndView();
         List<Student> sList = studentsServices.list();
