@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -37,6 +38,31 @@ public class FinTest extends BaseJunit4Test {
         studentsMapper.updateStudent(student);
     }
 
+    /**
+     * 使用foreach元素
+     * SELECT * FROM students
+     * <where>
+     *      AND id IN
+     *      <foreach collection="list" item="item" open="(" close=")" separator=",">
+     *          #{item}
+     *      </foreach>
+     * </where>
+     * 等价于
+     * SELECT * FROM students
+     * WHERE id in (1,4,7);
+     */
+    @Test
+    public void findByIdTest(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(4);
+        list.add(7);
+        List<Student> findListById = studentsMapper.findById(list);
+        for (Student c : findListById) {
+            System.out.println(c.getId()+" "+c.getName()+" "+c.getGender()+" "+c.getAge());
+        }
+        System.out.println(new PageInfo(findListById).getTotal());
+    }
     @Test
     public void findStudentByNameAndGenderUseIfTest(){
         List<Student> findListIf = studentsMapper.findStudentByNameAndGenderUseIf(null,"女");

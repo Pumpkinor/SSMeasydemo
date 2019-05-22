@@ -12,7 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7b93a13b-630e-4dc7-a49b-38aae1e39e53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/pumpkinor/dao/StudentsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/pumpkinor/dao/StudentsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/StudentsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/StudentsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/FinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/FinTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentsMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            <state relative-caret-position="440">
+              <caret line="53" column="20" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="53" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -88,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/pumpkinor/dao/StudentsMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="45" column="53" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="53" />
+            <state relative-caret-position="598">
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/test/FinTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="49" column="99" selection-start-line="49" selection-start-column="99" selection-end-line="49" selection-end-column="99" />
+            <state relative-caret-position="347">
+              <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,8 +170,8 @@
         <option value="$PROJECT_DIR$/src/main/test/BaseJunit4Test.java" />
         <option value="$PROJECT_DIR$/src/main/test/ServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/pumpkinor/dao/StudentsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/test/FinTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/StudentsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/test/FinTest.java" />
       </list>
     </option>
   </component>
@@ -376,7 +378,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FinTest.findStudentByNameAndGenderUseChooseTest">
+  <component name="RunManager" selected="JUnit.FinTest.findByIdTest">
+    <configuration name="FinTest.findByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SSMeasydemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FinTest" />
+      <option name="METHOD_NAME" value="findByIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FinTest.findStudentByNameAndGenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SSMeasydemo" />
       <option name="PACKAGE_NAME" value="" />
@@ -402,16 +414,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FinTest" />
       <option name="METHOD_NAME" value="findStudentByNameandGenderTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinTest.testList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SSMeasydemo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FinTest" />
-      <option name="METHOD_NAME" value="testList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -502,20 +504,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FinTest.testList" />
       <item itemvalue="JUnit.ServiceTest.testList" />
       <item itemvalue="Tomcat Server.tomcat 8 " />
       <item itemvalue="JUnit.FinTest.findStudentByNameandGenderTest" />
       <item itemvalue="JUnit.FinTest.findStudentByNameAndGenderTest" />
       <item itemvalue="JUnit.FinTest.findStudentByNameAndGenderUseChooseTest" />
+      <item itemvalue="JUnit.FinTest.findByIdTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FinTest.findByIdTest" />
         <item itemvalue="JUnit.FinTest.findStudentByNameAndGenderUseChooseTest" />
         <item itemvalue="JUnit.FinTest.findStudentByNameAndGenderTest" />
         <item itemvalue="JUnit.FinTest.findStudentByNameandGenderTest" />
         <item itemvalue="JUnit.ServiceTest.testList" />
-        <item itemvalue="JUnit.FinTest.testList" />
       </list>
     </recent_temporary>
   </component>
@@ -556,7 +558,7 @@
       <workItem from="1558434012886" duration="906000" />
       <workItem from="1558434935402" duration="2597000" />
       <workItem from="1558437711068" duration="2329000" />
-      <workItem from="1558506999991" duration="2915000" />
+      <workItem from="1558506999991" duration="5217000" />
     </task>
     <task id="LOCAL-00001" summary="change maven name&#10;and add some annotation">
       <created>1557547354753</created>
@@ -649,13 +651,24 @@
       <option name="project" value="LOCAL" />
       <updated>1558509737284</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change where 1=1 to &lt;where&gt;&lt;/where&gt;">
+      <created>1558509952407</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1558509952407</updated>
+    </task>
+    <task id="LOCAL-00015" summary="change SET name = #{name} to &lt;set&gt;&lt;/set&gt;">
+      <created>1558510690988</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1558510690988</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ServiceTest_testList - 2019.05.21 at 19h 14m 04s.xml">
-      <configuration name="ServiceTest.testList" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ServiceTest_testList - 2019.05.22 at 14h 47m 28s.xml">
       <configuration name="ServiceTest.testList" configurationId="JUnit" />
     </history-entry>
@@ -683,9 +696,12 @@
     <history-entry file="FinTest_findStudentByNameAndGenderUseChooseTest - 2019.05.22 at 15h 21m 37s.xml">
       <configuration name="FinTest.findStudentByNameAndGenderUseChooseTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FinTest_findByIdTest - 2019.05.22 at 16h 00m 11s.xml">
+      <configuration name="FinTest.findByIdTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105390000" />
+    <option name="totallyTimeSpent" value="107692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,7 +727,7 @@
       <window_info anchor="bottom" id="Database Console" weight="0.32946146" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.18162619" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.17951426" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5406547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -841,7 +857,9 @@
     <MESSAGE value="change to extend the basic class to use Junit4" />
     <MESSAGE value="add resultMap and &lt;if&gt;&lt;/if&gt;" />
     <MESSAGE value="add &lt;choose&gt;&lt;/choose&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="add &lt;choose&gt;&lt;/choose&gt;" />
+    <MESSAGE value="change where 1=1 to &lt;where&gt;&lt;/where&gt;" />
+    <MESSAGE value="change SET name = #{name} to &lt;set&gt;&lt;/set&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="change SET name = #{name} to &lt;set&gt;&lt;/set&gt;" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1056,10 +1074,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="53" column="20" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="53" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/pumpkinor/dao/StudentsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="45" column="53" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="53" />
+        <state relative-caret-position="598">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1068,18 +1093,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/FinTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="49" column="99" selection-start-line="49" selection-start-column="99" selection-end-line="49" selection-end-column="99" />
+        <state relative-caret-position="347">
+          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -40,6 +40,8 @@ public interface StudentsMapper {
      */
     void updateStudent(Student student);
 
+    List<Student> findById(@Param("list") List<Integer> list);
+
     List<Student> findStudentByNameAndGenderUseIf(@Param("name") String name,@Param("gender") String gender);
     //多参数的时候要使用@Param注解
 
