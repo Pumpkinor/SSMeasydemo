@@ -32,7 +32,7 @@
             DELETE FROM students WHERE id = #{id};
         </delete>
 
-        <select id="findStudentByNameAndGender" parameterType="String" resultMap="studentMap">
+        <select id="findStudentByNameAndGenderUseIf" parameterType="String" resultMap="studentMap">
             SELECT * FROM students
             WHERE 1 = 1
             <if test="name != null and name != ''">
@@ -42,4 +42,21 @@
                 AND gender = #{gender}
             </if>;
         </select>
+
+        <select id="findStudentByNameAndGenderUseChoose" parameterType="String" resultMap="studentMap">
+            SELECT * FROM students
+            WHERE 1 = 1
+            <choose>
+                <when test="name != null and name != ''">
+                    AND name = #{name}
+                </when>
+                <when test="gender != null and gender != ''">
+                    AND gender = #{gender}
+                </when>
+                <otherwise>
+                    ORDER BY id DESC
+                </otherwise>
+            </choose>
+        </select>
+
     </mapper>

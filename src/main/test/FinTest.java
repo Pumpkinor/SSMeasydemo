@@ -38,12 +38,20 @@ public class FinTest extends BaseJunit4Test {
     }
 
     @Test
-    public void findStudentByNameAndGenderTest(){
-        List<Student> findList = studentsMapper.findStudentByNameAndGender(null,"女");
-        for (Student c : findList) {
+    public void findStudentByNameAndGenderUseIfTest(){
+        List<Student> findListIf = studentsMapper.findStudentByNameAndGenderUseIf(null,"女");
+        for (Student c : findListIf) {
             System.out.println(c.getId()+" "+c.getName()+" "+c.getGender()+" "+c.getAge());
         }
-        System.out.println(new PageInfo(findList).getTotal());
+        System.out.println(new PageInfo(findListIf).getTotal());
+    }
+    @Test
+    public void findStudentByNameAndGenderUseChooseTest(){
+        List<Student> findListChoose = studentsMapper.findStudentByNameAndGenderUseChoose(null,null);
+        for (Student c : findListChoose) {
+            System.out.println(c.getId()+" "+c.getName()+" "+c.getGender()+" "+c.getAge());
+        }
+        System.out.println(new PageInfo(findListChoose).getTotal());
     }
 }
 
