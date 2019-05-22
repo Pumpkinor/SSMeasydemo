@@ -17,7 +17,7 @@ public class FinTest extends BaseJunit4Test {
 
 
     @Test
-    public void testList() {
+    public void listTest() {
         //PageHelper.offsetPage(0, 5);
         List<Student> cs=studentsMapper.list();
             System.out.println(cs.getClass());
@@ -28,7 +28,7 @@ public class FinTest extends BaseJunit4Test {
     }
 
     @Test
-    public void updateStudent() {
+    public void updateStudentTest() {
         Student student = new Student();
         student.setId(10);
         student.setName("小彩虹");
@@ -37,6 +37,14 @@ public class FinTest extends BaseJunit4Test {
         studentsMapper.updateStudent(student);
     }
 
+    @Test
+    public void findStudentByNameAndGenderTest(){
+        List<Student> findList = studentsMapper.findStudentByNameAndGender(null,"女");
+        for (Student c : findList) {
+            System.out.println(c.getId()+" "+c.getName()+" "+c.getGender()+" "+c.getAge());
+        }
+        System.out.println(new PageInfo(findList).getTotal());
+    }
 }
 
 

@@ -1,6 +1,7 @@
 package cn.pumpkinor.dao;
 
 import cn.pumpkinor.entity.Student;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -38,5 +39,7 @@ public interface StudentsMapper {
      * @param student  以需要修改的学生对象作为参数
      */
     void updateStudent(Student student);
+
+    List<Student> findStudentByNameAndGender(@Param("name") String name,@Param("gender") String gender);
 
 }
