@@ -2,7 +2,7 @@
     pageEncoding="UTF-8" import="java.util.*"%>
  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- 
+
  <div style="width:500px;margin:0px auto;text-align:center">
 	<table align='center' border='1' cellspacing='0'>
 		<caption>学生信息列表</caption>
@@ -52,11 +52,60 @@
 
 		 </table>
 	 </form>
+<%--	 <form action="${pageContext.request.contextPath}/listStudents" method="post">--%>
+<%--		 <table align='center' border='0' cellspacing='0'>--%>
+<%--			 <tr>--%>
+<%--				 <th>页码：</th>--%>
+<%--				 <td><input type="text" name="page" value="${page}"/></td>--%>
+<%--			 </tr>--%>
+<%--			 <tr>--%>
+<%--				 <th>页面大小：</th>--%>
+<%--				 <td><input type="text" name="rows" value="${rows}"/></td>--%>
+<%--			 </tr>--%>
+<%--			 <tr>--%>
+<%--				 <td colspan="2" align="center">--%>
+<%--					 <button type="submit" class="btn btn-success">转到</button>--%>
+<%--				 </td>--%>
+<%--			 </tr>--%>
+<%--		 </table>--%>
+<%--	 </form>--%>
+<%--	<div style="text-align:center">--%>
+<%--		<a href="?start=0">首  页</a>--%>
+<%--		<a href="?start=${page.start-page.count}">上一页</a>--%>
+<%--		<a href="?start=${page.start+page.count}">下一页</a>--%>
+<%--		<a href="?start=${page.last}">末  页</a>--%>
+<%--	</div>--%>
 
-	<div style="text-align:center">
-		<a href="?start=0">首  页</a>
-		<a href="?start=${page.start-page.count}">上一页</a>
-		<a href="?start=${page.start+page.count}">下一页</a>
-		<a href="?start=${page.last}">末  页</a>
-	</div>
+	 <div style="text-align:center">
+		 <table align='center' border='0' cellspacing='0'>
+			 <tr>
+				 <td>
+					 <a href="${pageContext.request.contextPath}/listStudents?page=${pageInfo.getFirstPage()}&rows=${pageInfo.pageSize}">首页</a>
+				 </td>
+				 <c:if test="${pageInfo.hasPreviousPage}">
+					 <td>
+						 <a href="${pageContext.request.contextPath}/listStudents?page=${pageInfo.prePage}&rows=${pageInfo.pageSize}">前一页</a>
+					 </td>
+				 </c:if>
+				 <c:forEach items="${pageInfo.navigatepageNums}" var="nav">
+					 <c:if test="${nav == pageInfo.pageNum}">
+						 <td style="font-weight: bold;">${nav}</td>
+					 </c:if>
+					 <c:if test="${nav != pageInfo.pageNum}">
+						 <td>
+							 <a href="${pageContext.request.contextPath}/listStudents?page=${nav}&rows=${pageInfo.pageSize}">${nav}</a>
+						 </td>
+					 </c:if>
+				 </c:forEach>
+				 <c:if test="${pageInfo.hasNextPage}">
+					 <td>
+						 <a href="${pageContext.request.contextPath}/listStudents?page=${pageInfo.nextPage}&rows=${pageInfo.pageSize}">下一页</a>
+					 </td>
+				 </c:if>
+				 <td>
+					 <a href="${pageContext.request.contextPath}/listStudents?page=${pageInfo.getLastPage()}&rows=${pageInfo.pageSize}">末页</a>
+				 </td>
+			 </tr>
+		 </table>
+	 </div>
  </div>

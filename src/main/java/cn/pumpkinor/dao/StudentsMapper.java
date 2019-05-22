@@ -2,6 +2,7 @@ package cn.pumpkinor.dao;
 
 import cn.pumpkinor.entity.Student;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,6 +18,8 @@ public interface StudentsMapper {
     /**
      * @return Student 返回所有学生的信息
      */
+    //在dao接口中使用@Select @Update @Delete @Insert注解和在xml文件中写sql效果一样
+    @Select("SELECT * FROM students")
     List<Student> list();
 
     /**

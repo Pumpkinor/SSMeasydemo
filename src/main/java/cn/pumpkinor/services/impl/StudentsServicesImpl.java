@@ -3,6 +3,8 @@ package cn.pumpkinor.services.impl;
 import cn.pumpkinor.dao.StudentsMapper;
 import cn.pumpkinor.entity.Student;
 import cn.pumpkinor.services.StudentsServices;
+import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +22,11 @@ public class StudentsServicesImpl implements StudentsServices {
     }
 
     @Override
-    public List<Student> list(){
+    public List<Student> list(int page,int rows){
+        PageHelper.startPage(page, rows);
         return studentsMapper.list();
     }
+
 
     @Override
     public void addStudent(Student student){

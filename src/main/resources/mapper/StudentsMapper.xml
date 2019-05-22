@@ -12,9 +12,9 @@
             <result property="age" column="age"></result>
         </resultMap>
 
-        <select id="list" resultMap="studentMap">
-           SELECT * FROM students
-        </select>
+<!--        <select id="list" resultMap="studentMap">-->
+<!--           SELECT * FROM students-->
+<!--        </select>-->
 
         <insert id="addStudent" parameterType="Student">
             INSERT INTO students VALUE (NULL,#{name},#{gender},#{age})
@@ -64,6 +64,7 @@
                 AND gender = #{gender}
             </if>
         </select>
+
         <!--where标签比where 1=1要好-->
         <!--如果where标签内经过判断后没有要执行的sql语句 那么 执行时就不会生成where语句-->
         <select id="findStudentByNameAndGenderUseChoose" parameterType="String" resultMap="studentMap">

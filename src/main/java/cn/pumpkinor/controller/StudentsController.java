@@ -34,10 +34,14 @@ public class StudentsController {
 
 
     @RequestMapping("/listStudents")
-    public ModelAndView listStudents(){
+    public ModelAndView listStudents(@RequestParam(required = false, defaultValue = "1") int page,
+                                     @RequestParam(required = false, defaultValue = "8") int rows){
         ModelAndView studentMAV =new ModelAndView();
-        List<Student> sList = studentsServices.list();
+        List<Student> sList = studentsServices.list(page,rows);
+        studentMAV.addObject("pageInfo", new PageInfo<Student>(sList));
         studentMAV.addObject("stu",sList);
+        studentMAV.addObject("page",page);
+        studentMAV.addObject("rows",rows);
         studentMAV.setViewName("listStudents");
         return studentMAV;
     }

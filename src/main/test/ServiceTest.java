@@ -1,4 +1,3 @@
-import cn.pumpkinor.dao.StudentsMapper;
 import cn.pumpkinor.entity.Student;
 import cn.pumpkinor.services.StudentsServices;
 import com.github.pagehelper.PageInfo;
@@ -14,8 +13,7 @@ public class ServiceTest extends BaseJunit4Test {
 
     @Test
     public void testList() {
-        //PageHelper.offsetPage(0, 5);
-        List<Student> cs=studentsServices.list();
+        List<Student> cs=studentsServices.list(1,2);
         System.out.println(cs.getClass());
         for (Student c : cs) {
             System.out.println(c.getId()+" "+c.getName()+" "+c.getGender());

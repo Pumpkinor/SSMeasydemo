@@ -2,6 +2,7 @@ import cn.pumpkinor.dao.StudentsMapper;
 import cn.pumpkinor.entity.Student;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.session.RowBounds;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,6 +21,7 @@ public class FinTest extends BaseJunit4Test {
     @Test
     public void listTest() {
         //PageHelper.offsetPage(0, 5);
+        PageHelper.startPage(1, 10);
         List<Student> cs=studentsMapper.list();
             System.out.println(cs.getClass());
             for (Student c : cs) {
