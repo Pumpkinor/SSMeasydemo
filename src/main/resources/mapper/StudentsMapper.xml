@@ -42,21 +42,23 @@
                 AND gender = #{gender}
             </if>;
         </select>
-
+        <!--where标签比where 1=1要好-->
+        <!--如果where标签内经过判断后没有要执行的sql语句 那么 执行时就不会生成where语句-->
         <select id="findStudentByNameAndGenderUseChoose" parameterType="String" resultMap="studentMap">
             SELECT * FROM students
-            WHERE 1 = 1
-            <choose>
-                <when test="name != null and name != ''">
-                    AND name = #{name}
-                </when>
-                <when test="gender != null and gender != ''">
-                    AND gender = #{gender}
-                </when>
-                <otherwise>
-                    ORDER BY id DESC
-                </otherwise>
-            </choose>
+           <where>
+               <choose>
+                   <when test="name != null and name != ''">
+                       AND name = #{name}
+                   </when>
+                   <when test="gender != null and gender != ''">
+                       AND gender = #{gender}
+                   </when>
+                   <otherwise>
+                       ORDER BY id DESC
+                   </otherwise>
+               </choose>
+           </where>
         </select>
 
     </mapper>
